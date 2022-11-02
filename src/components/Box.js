@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 export default function Box() {
+
   return (
-    <mesh>
+    <mesh position={[0, 0, 0]} >
       <boxBufferGeometry attach='geometry'></boxBufferGeometry>
-      <meshLambertMaterial attach='material' color='hotpink' />
+      <meshStandardMaterial attach='material' color='green' />
     </mesh>
   )
 }
