@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div id='canvasContainer'>
-      <Canvas>
+      <Canvas shadows>
         <Suspense fallback={null}>
           <MainScene />
         </Suspense>

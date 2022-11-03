@@ -16,8 +16,16 @@ export default function Camera() {
   
   return (
     <>
-      <PerspectiveCamera position={[0, 1, 5]} makeDefault />
-      <OrbitControls ref={orbitControlRef} minPolarAngle={angleToRadians(40)} maxPolarAngle={angleToRadians(80)} />
+      <PerspectiveCamera 
+        position={[0, 1, 5]} 
+        makeDefault 
+      />
+      <OrbitControls 
+        ref={orbitControlRef} 
+        minPolarAngle={angleToRadians(40)} 
+        maxPolarAngle={angleToRadians(80)} 
+        enableZoom={false}
+      />
     </>
   )
 }
