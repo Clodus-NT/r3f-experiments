@@ -1,21 +1,16 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Stars, PerspectiveCamera, OrbitControls } from '@react-three/drei';
-import Box from './components/Box';
-import Plane from './components/Plane';
 import './App.css';
+import { Stars } from '@react-three/drei';
+
+// When using perspective camera with orbit controls, manipulate the orbit controls props rather than the camera props
 
 function App() {
+
   return (
     <div id='canvasContainer'>
-      <Canvas id='canvas'>
-        <PerspectiveCamera makeDefault position={[0, 1, -5.75]} />
-        <OrbitControls />
+      <Canvas>
         <Stars />
-        <ambientLight intensity={0.25} />
-        <spotLight position={[10, 15, 10]} angle={0.3} intensity={1} />
-        <Box />
-        <Plane />
       </Canvas>
     </div>
   );
