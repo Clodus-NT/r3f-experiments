@@ -19,9 +19,25 @@ export default function Ball() {
       // y-axis motion
       animationTimeline.to(ballRef.current.position, {
         y: 0.5,
-        duration: 0.75,
+        duration: 0.5,
         ease: 'power1.in'
       }, '<')
+      
+      const decayFactor = 0.8
+      for (let i = 1; i <= 4; i++) {
+        // Going up
+        animationTimeline.to(ballRef.current.position, {
+          y:  Math.pow( decayFactor, i) * 1.5,
+          duration: 0.2,
+          ease: 'power2.out'
+        }, '>')
+        // Coming down
+        animationTimeline.to(ballRef.current.position, {
+          y: 0.5,
+          duration: 0.2,
+          ease: 'power2.in'
+        }, '>')
+      }
 
       // Play
       animationTimeline.play();
@@ -31,7 +47,7 @@ export default function Ball() {
   return (
     <mesh 
       ref={ballRef}
-      position={[-2, 1, 0]} 
+      position={[-2, 1.5, 0]} 
       castShadow
     >
       <sphereGeometry args={[0.5, 32, 32]} />
