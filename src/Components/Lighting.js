@@ -9,6 +9,7 @@ export default function Lighting() {
         args={['#ffffff', 1.5, 10, angleToRadians(60), 0.85]}
         position={[-3, 1, 0]}
         castShadow
+        shadow-radius={5}
       />
     </>
   )
